@@ -50,18 +50,18 @@ void Friend::renderHeart()
 }
 void Friend::render1life()
 {
-    heart.render(900,20,nullptr,0,nullptr,flip);
+    heart.render(1000,20,nullptr,0,nullptr,flip);
 }
 void Friend::render2life()
 {
-    heart.render(900,20,nullptr,0,nullptr,flip);
-    heart.render(970,20,nullptr,0,nullptr,flip);
+    heart.render(1000,20,nullptr,0,nullptr,flip);
+    heart.render(1080,20,nullptr,0,nullptr,flip);
 }
 void Friend::render3life()
 {
-    heart.render(900,20,nullptr,0,nullptr,flip);
-    heart.render(970,20,nullptr,0,nullptr,flip);
-    heart.render(1040,20,nullptr,0,nullptr,flip);
+    heart.render(1000,20,nullptr,0,nullptr,flip);
+    heart.render(1080,20,nullptr,0,nullptr,flip);
+    heart.render(1160,20,nullptr,0,nullptr,flip);
 }
 bool Friend::checkimpactdino(Alldino &xdino)
 {

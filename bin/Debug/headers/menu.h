@@ -21,7 +21,6 @@ public:
     LButton backtomenu{0,0,146,75};
     LButton home{0,0,130,130};
     LButton musicControl{1100,15,80,80};
-    LButton gamePause{1140,10,50,50};
     ManageTexture musicOnl;
     ManageTexture musicOff;
     ManageTexture renderStar;
@@ -35,8 +34,6 @@ public:
     ManageTexture gameover;
     ManageTexture highscore;
     ManageTexture heart_text;
-    ManageTexture playButton;
-    ManageTexture pauseButton;
     Friend star[4];
     Friend heart;
     Music music;
@@ -50,14 +47,13 @@ public:
     bool gameloop=true;
     bool isrenderInstruction=false;
     bool isrenderScore=false;
-    double  double_score=0;
+    int time_score=0;
     int scrollingOffset = 0;
     int score_end;
     int countStar;
     int countMusic=0;
     int countHeart=0;
     int live=1;
-    int gameplay=0;
     static int status;
     double rollLevel[10]={4,4.5,5,5.5,6,6.5,7,8,9,10};
     void renderMenu();

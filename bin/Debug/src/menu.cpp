@@ -10,20 +10,17 @@ Menu::Menu()
     renderStar.upImage("pics/star.png");
     musicOnl.upImage("pics/on.png");
     musicOff.upImage("pics/off.png");
-    playButton.upImage("pics/pause.png");
-    pauseButton.upImage("pics/play.png");
 }
 void Menu::renderGameplay()
 {
-    gameplay=0;
     Mix_HaltMusic();
     if(countMusic%2==0)
         music.playbgrdMusic();
+    time_score=SDL_GetTicks();
     countStar=0;
     countHeart=0;
     live=1;
     maindino.score=0;
-    double_score=0;
     while(playgame==true)
                 {
                     SDL_RenderClear(Engine::renderer);
@@ -34,11 +31,6 @@ void Menu::renderGameplay()
                                        playgame=false;
                                        gameloop=false;
                                    }
-                            if(gamePause.isInside()==true &&e.type ==SDL_MOUSEBUTTONDOWN)
-                               {
-                                    gameplay++;
-                                    music.playmouseSound();
-                               }
                         maindino.handleEventDino(e);
                         }
                 if(live>0)
@@ -49,80 +41,68 @@ void Menu::renderGameplay()
                                 {
                                     scrollingOffset = 0;
                                 }
-                   // maindino.score=(SDL_GetTicks()-time_score)/100;
+                    maindino.score=(SDL_GetTicks()-time_score)/100;
                     maindino.generateLevel(maindino.level);
-                   // scrollingOffset -=rollLevel[maindino.level];
+                    scrollingOffset -=rollLevel[maindino.level];
                     score_text.loadFromRenderedText(to_string(maindino.score),textColor);
                     star_count_text.loadFromRenderedText(to_string(countStar),textColor);
                     background.render( scrollingOffset, 0,nullptr,0,nullptr,allflip );
                     background.render( scrollingOffset + background.getWidth(), 0,nullptr,0,nullptr,allflip );
                     renderStar.render(950,110,nullptr,0,nullptr,allflip);
-                    score_text.rendertext(50,50,50,50);
-                    star_count_text.rendertext(1000,100,60,60);
-                    maindino.renderDino();
+                    heart.renderHeart();
+                    heart.moveFriend(maindino.level);
+                    heart.setupLive(countHeart,live);
+                    if(heart.checkimpactHeart(maindino)==true)
+                    {
+                        countHeart++;
+                        heart.setupFriend();
+                    }
                     if(live==1)
                         heart.render1life();
                     if(live==2)
                         heart.render2life();
                     if(live==3)
                         heart.render3life();
-                    heart.renderHeart();
+                    maindino.renderDino();
+                    score_text.rendertext(50,50,50,50);
+                    maindino.moveDino(maindino.level);
+                    maindino.fire.moveEnemy(maindino.level);
                     for(int i=0;i<4;i++)
                        {
                            star[i].renderFriend();
+                           star[i].moveFriend(maindino.level);
                        }
-                    if(gameplay%2==0)
+                    for(int i=0;i<4;i++)
                         {
-                            double_score+=0.1;
-                            maindino.score=double_score;
-                            playButton.render(1140,10,nullptr,0,nullptr,allflip);
-                            scrollingOffset -=rollLevel[maindino.level];
-                            heart.moveFriend(maindino.level);
-                            maindino.moveDino(maindino.level);
-                            maindino.fire.moveEnemy(maindino.level);
-                            heart.setupLive(countHeart,live);
-                            for(int i=0;i<4;i++)
+                           if (star[i].checkimpactdino(maindino)==true)
                                 {
-                                star[i].moveFriend(maindino.level);
-                                if (star[i].checkimpactdino(maindino)==true)
-                                    {
-                                        countStar++;
-                                        star[i].setupFriend();
-                                    }
-                                }
-                            if(maindino.level<=5 || maindino.fire2.geteposX()<1250)
-                                {
-                                maindino.fire2.moveEnemy(maindino.level);
-                                }
-                            maindino.bird.moveEnemy(maindino.level);
-                            if (maindino.level>5)
-                                {
-                                    maindino.monster.moveEnemy(maindino.level);
-                                }
-                            if(heart.checkimpactHeart(maindino)==true)
-                                {
-                                countHeart++;
-                                heart.setupFriend();
-                                }
+                                    countStar++;
+                                    star[i].setupFriend();
+                               }
                         }
+                    star_count_text.rendertext(1000,100,60,60);
+                    if(maindino.level<=5 || maindino.fire2.geteposX()<1250)
+                        {
+                            maindino.fire2.moveEnemy(maindino.level);
+                        }
+                    maindino.bird.moveEnemy(maindino.level);
+                    if (maindino.level>5)
+                        {
+                            maindino.monster.moveEnemy(maindino.level);
+                        }
+                    }
+                }
                     if ((maindino.checkimpactfire2()==true)||(maindino.checkimpactbird()==true) || (maindino.checkimpactfire()==true) || (maindino.checkimpactmonster()==true && maindino.level>5))
                     {
                         live--;
                         countHeart-=5;
                         maindino.setupDino();
                     }
-                    else
-                        {
-                            pauseButton.render(1140,10,nullptr,0,nullptr,allflip);
-                        }
-
-                    }
-                }
                     if (live==0)
                     {
                         music.playloseSound();
                       //  maindino.score=maindino.score+countStar*20;
-                        score_end=maindino.score+countStar*5;
+                        score_end=maindino.score+countStar*8;
                         if(score_end>Engine::readHighscore())
                         {
                             SDL_RWops *file = SDL_RWFromFile("score/score.bin", "w+b");
@@ -235,7 +215,7 @@ void Menu::renderGameover()
                     Menu::status=1;
                     playgame=true;
                     maindino.setupDino();
-                    double_score=0;
+                    time_score=SDL_GetTicks();
                     gamelose=false;
                 }
             if (home.isInside()==true && (e.type ==SDL_MOUSEBUTTONDOWN))

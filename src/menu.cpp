@@ -72,7 +72,7 @@ void Menu::renderGameplay()
                            star[i].renderFriend();
                        }
                     if(gameplay%2==0)
-                        {
+                    {
                             double_score+=0.1;
                             maindino.score=double_score;
                             playButton.render(1140,10,nullptr,0,nullptr,allflip);
@@ -104,12 +104,13 @@ void Menu::renderGameplay()
                                 countHeart++;
                                 heart.setupFriend();
                                 }
-                        }
-                    if ((maindino.checkimpactfire2()==true)||(maindino.checkimpactbird()==true) || (maindino.checkimpactfire()==true) || (maindino.checkimpactmonster()==true && maindino.level>5))
-                    {
+
+                        if ((maindino.checkimpactfire2()==true)||(maindino.checkimpactbird()==true) || (maindino.checkimpactfire()==true) || (maindino.checkimpactmonster()==true && maindino.level>5))
+                        {
                         live--;
                         countHeart-=5;
                         maindino.setupDino();
+                        }
                     }
                     else
                         {

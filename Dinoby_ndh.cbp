@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Dinoby_ndh" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="headers/;src/" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Dinoby_ndh" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Dinoby_ndh" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="headers/Engine.h" />
+		<Unit filename="headers/button.h" />
+		<Unit filename="headers/dino.h" />
+		<Unit filename="headers/enemy.h" />
+		<Unit filename="headers/friend.h" />
+		<Unit filename="headers/game_image.h" />
+		<Unit filename="headers/include.h" />
+		<Unit filename="headers/menu.h" />
+		<Unit filename="headers/music.h" />
+		<Unit filename="src/Engine.cpp" />
+		<Unit filename="src/button.cpp" />
+		<Unit filename="src/dino.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/enemy.cpp" />
+		<Unit filename="src/friend.cpp" />
+		<Unit filename="src/game_image.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/menu.cpp" />
+		<Unit filename="src/music.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

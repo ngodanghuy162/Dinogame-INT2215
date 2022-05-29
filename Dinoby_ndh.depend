@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1653667903 source:c:\users\ngohu\onedrive\desktop\dinoby_ndh\src\main.cpp
+	"include.h"
+	"Engine.h"
+	"game_image.h"
+	"dino.h"
+	"enemy.h"
+	"button.h"
+	"menu.h"
+	"friend.h"
+	"music.h"
+
+1653622755 source:c:\users\ngohu\onedrive\desktop\dinoby_ndh\src\engine.cpp
+	"Engine.h"
+
+1652784003 source:c:\users\ngohu\onedrive\desktop\dinoby_ndh\src\game_image.cpp
+	"game_image.h"
+	"Engine.h"
+
+1653728651 source:c:\users\ngohu\onedrive\desktop\dinoby_ndh\src\dino.cpp
+	"dino.h"
+
+1653639587 source:c:\users\ngohu\onedrive\desktop\dinoby_ndh\src\enemy.cpp
+	"enemy.h"
+
+1653287574 source:c:\users\ngohu\onedrive\desktop\dinoby_ndh\src\button.cpp
+	"button.h"
+
+1653465857 source:c:\users\ngohu\onedrive\desktop\dinoby_ndh\src\menubutton.cpp
+
+1653813339 source:c:\users\ngohu\onedrive\desktop\dinoby_ndh\src\menu.cpp
+	"menu.h"
+
+1653551458 source:c:\users\ngohu\onedrive\desktop\dinoby_ndh\src\score.cpp
+	"score.h"
+
+1653624991 source:c:\users\ngohu\onedrive\desktop\dinoby_ndh\src\music.cpp
+	"music.h"
+
+1653813300 source:c:\users\ngohu\onedrive\desktop\dinoby_ndh\src\friend.cpp
+	"friend.h"
+

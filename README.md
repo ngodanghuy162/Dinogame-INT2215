@@ -30,6 +30,7 @@
     Game có menu điều khiển game,có hướng dẫn, có âm thanh và nhạc tùy bạn chọn có thể tắt bật, có chức năng tạm dừng game , ghi nhận điểm cao .
     Video demo: https://www.youtube.com/watch?v=-wS07NzBF6Y
    ![image](https://user-images.githubusercontent.com/100140595/170877452-66153a4e-4679-4afc-9f4d-a3d850831113.png)
+   ![image](https://user-images.githubusercontent.com/100140595/171016758-49e54f95-4f04-4679-9811-353407d4a500.png)
   ![image](https://user-images.githubusercontent.com/100140595/170877550-647423a6-b1ff-45bf-928f-54ae3d24a95b.png)
  # các chức năng đã cài đặt
     Di chuyển quái vật

@@ -24,24 +24,34 @@
             Nếu gặp khó khăn trong quá trình cài đặt hay chơi game, hãy liên lạc qua email ngohuy658@gmail.com.
 # Mô tả game
     Đây là game Dino dựa trên game Dinosaur nổi tiếng trên google Chrome với một cải tiến về tính năng.
-    Có 3 loại quái trong game(lửa, chim , monster), nhiệm vụ bạn là điều nút SPACE hoặc ↑ để điều khiển chú khủng long né chúng. Bạn có thể điều khiển khủng long để ăn ngôi sao để tăng điểm, trái tim để tăng mạng. Cứ 5 trái tim sẽ được 1 mạng.
-    Càng ngày , mức độ level càng cao , quái sẽ chạy càng nhanh.
-    Game có menu điều khiển game,có hướng dẫn, có âm thanh và nhạc tùy bạn chọn có thể tắt bật, có chức năng tạm dừng, ghi nhận điểm cao .
+    Nhiệm vụ bạn là điều nút SPACE hoặc ↑ để điều khiển chú khủng long né các chướng ngại vật . Bạn có thể điều khiển khủng long để ăn ngôi sao để tăng điểm, trái tim để tăng mạng. Cứ 5 trái tim sẽ được 1 mạng, và khi chạm vào quái vật bạn sẽ bị trừ đi một mạng( hiển thị góc phải màn hình). Khi về 0 mạng, bạn sẽ thua.
+    Có 3 chướng ngại vật là lửa, chim và quái vật. Quái vật sẽ xuất hiện ở level 5.
+    Càng ngày , mức độ level càng cao(dựa theo điểm) , quái sẽ chạy càng nhanh, và khi đến level 5 sẽ có thêm 1 chướng ngại vật là quái vật.
+    Game có menu điều khiển game,có hướng dẫn, có âm thanh và nhạc tùy bạn chọn có thể tắt bật, có chức năng tạm dừng game , ghi nhận điểm cao .
     Video demo: https://www.youtube.com/watch?v=-wS07NzBF6Y
    ![image](https://user-images.githubusercontent.com/100140595/170877452-66153a4e-4679-4afc-9f4d-a3d850831113.png)
   ![image](https://user-images.githubusercontent.com/100140595/170877550-647423a6-b1ff-45bf-928f-54ae3d24a95b.png)
- 
+ # các chức năng đã cài đặt
+    Di chuyển quái vật
+    Sinh vị trí quái ngẫu nhiên.
+    Thêm mạng( ăn 5 trái tim 1 mạng)
+    Ăn sao thêm điểm .
+    (em muốn cho tọa độ mấy cái sao , trái tim lên cao một số cho đẹp nữa vì nếu chỉ để tọa độ dino nhảy lên được thì game sẽ dễ quá ạ)
+    Xử lí va chạm(dino vs quái vật, dino vs sao, dino vs trái tim)
+    Đọc và ghi điểm số cao nhất lên file.
+    Giao diện menu dễ nhìn, tối ưu giữa các menu.
+    Âm thanh nút chuột, âm thanh nhạc menu , âm thanh chơi game , âm thanh thua cuộc.
  # Các kỹ thuật sử dụng trong game
     Thư viện SDL2.0
     Kĩ thuật tách file.
-    Sử dụng và quản lí mảng, xử lí đồ họa, dùng vòng .
+    Sử dụng và quản lí mảng, xử lí đồ họa, dùng vòng lặp.
     Tạo, sử dụng và quản lí class nhiều đối tượng: địch , điểm ,hình ảnh, âm thanh,...
     Xử lí hình ảnh,  sự kiện SDL, bật/tắt âm thanh, di chuyển đối tượng, xử lí va chạm, tính toán tọa độ,....
     Có thể lưu lại điểm cao nhất sau mỗi lần chơi nhờ đọc, ghi file
     
 # Nguồn tham khảo
-    Các kiến thức : Youtube cô Nguyễn Thị Minh 
-    về SDL : Lazyfoo
+    Các kiến thức : Youtube cô Nguyễn Thị Minh Châu
+    về SDL : Lazyfoo,SDL wiki
     Hình ảnh: Google image, flaticon
     Âm thanh: Google
 # Điều tâm đắc
@@ -50,11 +60,13 @@
     Đa số hình ảnh game có tính độc đáo, mới lạ cho chương trình.
     Học được cách setup môi trường, sử dụng thư viện ngoài.
     Chương trình rất dễ để refactor cũng như update tính năng.
+    Hiểu được cách cải tiến, clean code .
  # Điểm hạn chế
     Quản lí đối tượng chưa thật sự tối ưu.
  # Hướng phát triển tiếp
      Phát triển thêm tính quái, có đạn bắn  từ quái, dino có thể tấn công , có khiên cho dino.
      Thêm quái AI từ trên trời xuống tấn công dino.
      Cải thiện chất lượng hình ảnh.
+     Bổ sung thêm quái vật Boss, dino tấn công được. Thêm quái trên trời thả đạn xuống. 
     
     
